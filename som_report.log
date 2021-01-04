@@ -1,0 +1,663 @@
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (MiKTeX 2.9 64-bit) (preloaded format=pdflatex 2013.2.21)  3 APR 2013 10:42
+entering extended mode
+**som_report.tex
+("C:\Users\Mike\Desktop\Classes\COSC 4P80\Assignment2\som_report.tex"
+LaTeX2e <2011/06/27>
+Babel <v3.8m> and hyphenation patterns for english, afrikaans, ancientgreek, ar
+abic, armenian, assamese, basque, bengali, bokmal, bulgarian, catalan, coptic, 
+croatian, czech, danish, dutch, esperanto, estonian, farsi, finnish, french, ga
+lician, german, german-x-2012-05-30, greek, gujarati, hindi, hungarian, iceland
+ic, indonesian, interlingua, irish, italian, kannada, kurmanji, latin, latvian,
+ lithuanian, malayalam, marathi, mongolian, mongolianlmc, monogreek, ngerman, n
+german-x-2012-05-30, nynorsk, oriya, panjabi, pinyin, polish, portuguese, roman
+ian, russian, sanskrit, serbian, slovak, slovenian, spanish, swedish, swissgerm
+an, tamil, telugu, turkish, turkmen, ukenglish, ukrainian, uppersorbian, usengl
+ishmax, welsh, loaded.
+("C:\Program Files\MiKTeX 2.9\tex\latex\ieeetran\IEEEtran.cls"
+Document Class: IEEEtran 2012/12/27 V1.8 by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+\@IEEEtrantmpdimenA=\dimen102
+\@IEEEtrantmpdimenB=\dimen103
+\@IEEEtrantmpcountA=\count79
+\@IEEEtrantmpcountB=\count80
+\@IEEEtrantmptoksA=\toks14
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 368.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\psnfss\ot1ptm.fd"
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+\@IEEEnormalsizeunitybaselineskip=\dimen104
+-- This is a 10 point document.
+\CLASSINFOnormalsizebaselineskip=\dimen105
+\CLASSINFOnormalsizeunitybaselineskip=\dimen106
+\IEEEnormaljot=\dimen107
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <5> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <7> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <8> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <9> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <10> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <11> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <12> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <17> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <20> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/n' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/n' tried instead on input line 726.
+LaTeX Font Info:    Font shape `OT1/ptm/bx/it' in size <24> not available
+(Font)              Font shape `OT1/ptm/b/it' tried instead on input line 726.
+\IEEEilabelindentA=\dimen108
+\IEEEilabelindentB=\dimen109
+\IEEEilabelindent=\dimen110
+\IEEEelabelindent=\dimen111
+\IEEEdlabelindent=\dimen112
+\IEEElabelindent=\dimen113
+\IEEEiednormlabelsep=\dimen114
+\IEEEiedmathlabelsep=\dimen115
+\IEEEiedtopsep=\skip41
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@IEEEsubequation=\count85
+\abovecaptionskip=\skip42
+\belowcaptionskip=\skip43
+\c@figure=\count86
+\c@table=\count87
+\@IEEEeqnnumcols=\count88
+\@IEEEeqncolcnt=\count89
+\@IEEEsubeqnnumrollback=\count90
+\@IEEEtmpitemindent=\dimen116
+\c@IEEEbiography=\count91
+\@IEEEtranrubishbin=\box26
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphicx.sty"
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\keyval.sty"
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks15
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\graphics.sty"
+Package: graphics 2009/02/05 v1.0o Standard LaTeX Graphics (DPC,SPQR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\graphics\trig.sty"
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\00miktex\graphics.cfg"
+File: graphics.cfg 2007/01/18 v1.5 graphics configuration of teTeX/TeXLive
+)
+Package graphics Info: Driver file: pdftex.def on input line 91.
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\pdftex-def\pdftex.def"
+File: pdftex.def 2011/05/27 v0.06d Graphics/color for pdfTeX
+
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\infwarerr.sty"
+Package: infwarerr 2010/04/08 v1.3 Providing info/warning/error messages (HO)
+)
+("C:\Program Files\MiKTeX 2.9\tex\generic\oberdiek\ltxcmds.sty"
+Package: ltxcmds 2011/11/09 v1.22 LaTeX kernel commands for general use (HO)
+)
+\Gread@gobject=\count92
+))
+\Gin@req@height=\dimen117
+\Gin@req@width=\dimen118
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithm.sty"
+Package: algorithm 2009/08/24 v0.1 Document Style `algorithm' - floating enviro
+nment
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\float\float.sty"
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count93
+\float@exts=\toks16
+\float@box=\box27
+\@float@everytoks=\toks17
+\@floatcapt=\box28
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\base\ifthen.sty"
+Package: ifthen 2001/05/26 v1.1c Standard LaTeX ifthen package (DPC)
+)
+\@float@every@algorithm=\toks18
+\c@algorithm=\count94
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\algorithms\algorithmic.sty"
+Package: algorithmic 2009/08/24 v0.1 Document Style `algorithmic'
+\c@ALC@unique=\count95
+\c@ALC@line=\count96
+\c@ALC@rem=\count97
+\c@ALC@depth=\count98
+\ALC@tlm=\skip44
+\algorithmicindent=\skip45
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\array.sty"
+Package: array 2008/09/09 v2.4c Tabular extension package (FMi)
+\col@sep=\dimen119
+\extrarowheight=\dimen120
+\NC@list=\toks19
+\extratabsurround=\skip46
+\backup@length=\skip47
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\tools\tabularx.sty"
+Package: tabularx 1999/01/07 v2.07 `tabularx' package (DPC)
+\TX@col@width=\dimen121
+\TX@old@table=\dimen122
+\TX@old@col=\dimen123
+\TX@target=\dimen124
+\TX@delta=\dimen125
+\TX@cols=\count99
+\TX@ftn=\toks20
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\cite\cite.sty"
+LaTeX Info: Redefining \cite on input line 302.
+LaTeX Info: Redefining \nocite on input line 373.
+Package: cite 2010/09/10  v 5.3
+)
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption.sty"
+Package: caption 2013/02/03 v3.3-65 Customizing captions (AR)
+
+("C:\Program Files\MiKTeX 2.9\tex\latex\caption\caption3.sty"
+Package: caption3 2013/02/03 v1.5-62 caption3 kernel (AR)
+\captionmargin=\dimen126
+\captionmargin@=\dimen127
+\captionwidth=\dimen128
+\caption@tempdima=\dimen129
+\caption@indent=\dimen130
+\caption@parindent=\dimen131
+\caption@hangindent=\dimen132
+Package caption Info: Unknown document class (or package),
+(caption)             standard defaults will be used.
+)
+
+Package caption Warning: Unsupported document class (or package) detected,
+(caption)                usage of the caption package is not recommended.
+See the caption package documentation for explanation.
+
+Package caption Info: \@makecaption = \long macro:#1#2->\ifx \@captype \@IEEEta
+blestring \footnotesize \bgroup \par \centering \@IEEEtabletopskipstrut {\norma
+lfont \footnotesize #1}\\{\normalfont \footnotesize \scshape #2}\par \addvspace
+ {0.5\baselineskip }\egroup \@IEEEtablecaptionsepspace \else \@IEEEfigurecaptio
+nsepspace \setbox \@tempboxa \hbox {\normalfont \footnotesize {#1.}\nobreakspac
+e \nobreakspace #2}\ifdim \wd \@tempboxa >\hsize \setbox \@tempboxa \hbox {\nor
+malfont \footnotesize {#1.}\nobreakspace \nobreakspace }\parbox [t]{\hsize }{\n
+ormalfont \footnotesize \noindent \unhbox \@tempboxa #2}\else \ifCLASSOPTIONcon
+ference \hbox to\hsize {\normalfont \footnotesize \hfil \box \@tempboxa \hfil }
+\else \hbox to\hsize {\normalfont \footnotesize \box \@tempboxa \hfil }\fi \fi 
+\fi .
+\c@ContinuedFloat=\count100
+Package caption Info: float package is loaded.
+) ("C:\Program Files\MiKTeX 2.9\tex\latex\caption\subcaption.sty"
+Package: subcaption 2013/02/03 v1.1-62 Sub-captions (AR)
+\c@subfigure=\count101
+\c@subtable=\count102
+)
+("C:\Users\Mike\Desktop\Classes\COSC 4P80\Assignment2\som_report.aux"
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+
+LaTeX Warning: Label `fig:1' multiply defined.
+
+
+LaTeX Warning: Label `fig:2' multiply defined.
+
+)
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 11.
+LaTeX Font Info:    ... okay on input line 11.
+ ("C:\Program Files\MiKTeX 2.9\tex\context\base\supp-pdf.mkii"
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count103
+\scratchdimen=\dimen133
+\scratchbox=\box29
+\nofMPsegments=\count104
+\nofMParguments=\count105
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count106
+\MPscratchDim=\dimen134
+\MPnumerator=\count107
+\makeMPintoPDFobject=\count108
+\everyMPtoPDFconversion=\toks22
+)
+Package caption Info: Begin \AtBeginDocument code.
+Package caption Info: End \AtBeginDocument code.
+ [1{C:/ProgramData/MiKTeX/2.9/pdftex/config/pdftex.map}
+
+
+]
+<./images/quality_of_life_map1.jpg, id=9, 501.875pt x 295.1025pt>
+File: ./images/quality_of_life_map1.jpg Graphic file (type jpg)
+
+<use ./images/quality_of_life_map1.jpg>
+Package pdftex.def Info: ./images/quality_of_life_map1.jpg used on input line 6
+9.
+(pdftex.def)             Requested size: 225.84166pt x 132.79489pt.
+
+<./images/quality_of_life_map2.jpg, id=10, 501.875pt x 278.03876pt>
+File: ./images/quality_of_life_map2.jpg Graphic file (type jpg)
+
+<use ./images/quality_of_life_map2.jpg>
+Package pdftex.def Info: ./images/quality_of_life_map2.jpg used on input line 7
+6.
+(pdftex.def)             Requested size: 225.84166pt x 125.11627pt.
+
+Underfull \vbox (badness 4556) has occurred while \output is active []
+
+
+<./images/som_structure.jpg, id=11, 292.84406pt x 240.14719pt>
+File: ./images/som_structure.jpg Graphic file (type jpg)
+
+<use ./images/som_structure.jpg>
+Package pdftex.def Info: ./images/som_structure.jpg used on input line 90.
+(pdftex.def)             Requested size: 146.42166pt x 120.07329pt.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 102.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 102.
+ [2 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/quality_of_life
+_map1.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/quality_
+of_life_map2.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/s
+om_structure.jpg>]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 159.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 159.
+
+<./images/randomsample.png, id=15, 149.05687pt x 149.8097pt>
+File: ./images/randomsample.png Graphic file (type png)
+
+<use ./images/randomsample.png>
+Package pdftex.def Info: ./images/randomsample.png used on input line 186.
+(pdftex.def)             Requested size: 59.62169pt x 59.9228pt.
+ [3 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/randomsample.pn
+g>]
+<./images/random_to_organization.png, id=28, 467.49657pt x 149.8097pt>
+File: ./images/random_to_organization.png Graphic file (type png)
+
+<use ./images/random_to_organization.png>
+Package pdftex.def Info: ./images/random_to_organization.png used on input line
+ 195.
+(pdftex.def)             Requested size: 233.74771pt x 74.90465pt.
+
+<./images/picture_samples.png, id=30, 268.00125pt x 244.66406pt>
+File: ./images/picture_samples.png Graphic file (type png)
+
+<use ./images/picture_samples.png>
+Package pdftex.def Info: ./images/picture_samples.png used on input line 205.
+(pdftex.def)             Requested size: 134.00029pt x 122.33173pt.
+
+Overfull \hbox (12.42679pt too wide) detected at line 217
+\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = [\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 RGB\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/
+m/it/10 RGB\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/
+10 R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT
+1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m
+/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )
+\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )]
+ []
+
+<./images/donkeykong_partition.jpg, id=31, 442.65375pt x 501.875pt>
+File: ./images/donkeykong_partition.jpg Graphic file (type jpg)
+
+<use ./images/donkeykong_partition.jpg>
+Package pdftex.def Info: ./images/donkeykong_partition.jpg used on input line 2
+27.
+(pdftex.def)             Requested size: 110.66316pt x 125.46843pt.
+
+
+! LaTeX Error: Environment align undefined.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.236 \begin{align}
+                   
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing \endgroup inserted.
+<inserted text> 
+                \endgroup 
+l.237 $
+       v_{2}$ = $v_{1}$ + [\mu(RGB),\sigma(RGB),\mu(R),\sigma(R),\mu(G),\sig...
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   v
+l.237 $v
+        _{2}$ = $v_{1}$ + [\mu(RGB),\sigma(RGB),\mu(R),\sigma(R),\mu(G),\sig...
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.237 $v_
+         {2}$ = $v_{1}$ + [\mu(RGB),\sigma(RGB),\mu(R),\sigma(R),\mu(G),\sig...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.237 $v_{2}$ = $v_{1}$ + [\mu
+                              (RGB),\sigma(RGB),\mu(R),\sigma(R),\mu(G),\sig...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238 $v_
+         {2}$ = [\mu(RGB_{t}),\sigma(RGB_{t}),\mu(R_{t}),\sigma(R_{t}),\mu(G...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.238 $v_{2}$ = [\mu
+                    (RGB_{t}),\sigma(RGB_{t}),\mu(R_{t}),\sigma(R_{t}),\mu(G...
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+
+! LaTeX Error: \begin{equation} on input line 235 ended by \end{align}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.240 \end{align}
+                 
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.240 \end{align}
+                 
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! You can't use `\eqno' in horizontal mode.
+\endequation ->\eqno 
+                     \hbox {\@eqnnum }$$\@ignoretrue 
+l.241 \end{equation}
+                    
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+
+Overfull \hbox (29.61148pt too wide) in paragraph at lines 237--241
+\OT1/ptm/m/n/10 v$[]$ = $\OML/cmm/m/it/10 v[]$ \OT1/ptm/m/n/10 + [$\OML/cmm/m/i
+t/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 RGB\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 RGB\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1
+/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/
+n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\
+OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm
+/m/it/10 G\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/1
+0 B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B\OT1
+/cmr/m/n/10 )][] $
+ []
+
+
+Overfull \hbox (8.30923pt too wide) in paragraph at lines 237--241
+\OT1/ptm/m/n/10 v$[]$ = [$\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R
+GB[]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 RGB[
+]\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R[]\OT1
+/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R[]\OT1/cmr/
+m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/1
+0 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G[]\OT1/cmr/m/n/10 )\O
+ML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 )\OML/cm
+m/m/it/10 ; [] $
+ []
+
+
+Overfull \hbox (8.60567pt too wide) in paragraph at lines 237--241
+$\OML/cmm/m/it/10 \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 B[]\OT1/cmr/m/n/10 )\OML/c
+mm/m/it/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 RGB\OT1/cmr/m/n/10 )\OML/cmm/m/
+it/10 ; []; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 )\OML/cmm/m/it
+/10 ; \OT1/cmr/m/n/10 (\OML/cmm/m/it/10 R\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; 
+\OT1/cmr/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cm
+r/m/n/10 (\OML/cmm/m/it/10 G\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/1
+0 (\OML/cmm/m/it/10 B\OT1/cmr/m/n/10 )\OML/cmm/m/it/10 ; \OT1/cmr/m/n/10 (\OML
+/cmm/m/it/10 B\OT1/cmr/m/n/10 )]$
+ []
+
+
+! LaTeX Error: \begin{document} ended by \end{equation}.
+
+See the LaTeX manual or LaTeX Companion for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.241 \end{equation}
+                    
+Your command was ignored.
+Type  I <command> <return>  to replace it with another command,
+or  <return>  to continue without it.
+
+! Missing $ inserted.
+<inserted text> 
+                $
+l.241 \end{equation}
+                    
+I've inserted something that you may have forgotten.
+(See the <inserted text> above.)
+With luck, this will get me unwedged. But if you
+really didn't forget anything, try typing `2' now; then
+my insertion and my current dilemma will both disappear.
+
+! Display math should end with $$.
+<to be read again> 
+                   \endgroup 
+l.241 \end{equation}
+                    
+The `$' that I just saw supposedly matches a previous `$$'.
+So I shall assume that you typed `$$' both times.
+
+[4 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/random_to_organi
+zation.png> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/picture
+_samples.png> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/donke
+ykong_partition.jpg>]
+! Extra \endgroup.
+<recently read> \endgroup 
+                          
+l.241 \end{equation}
+                    
+Things are pretty mixed up, but I think the worst is over.
+
+<./images/results/1_NR_200.jpg, id=36, 149.8097pt x 149.8097pt>
+File: ./images/results/1_NR_200.jpg Graphic file (type jpg)
+
+<use ./images/results/1_NR_200.jpg>
+Package pdftex.def Info: ./images/results/1_NR_200.jpg used on input line 311.
+(pdftex.def)             Requested size: 74.90465pt x 74.90465pt.
+
+<./images/results/2_NR_100.jpg, id=37, 149.8097pt x 149.8097pt>
+File: ./images/results/2_NR_100.jpg Graphic file (type jpg)
+
+<use ./images/results/2_NR_100.jpg>
+Package pdftex.def Info: ./images/results/2_NR_100.jpg used on input line 318.
+(pdftex.def)             Requested size: 74.90465pt x 74.90465pt.
+
+<./images/results/3_NR_50.jpg, id=38, 149.05687pt x 150.5625pt>
+File: ./images/results/3_NR_50.jpg Graphic file (type jpg)
+
+<use ./images/results/3_NR_50.jpg>
+Package pdftex.def Info: ./images/results/3_NR_50.jpg used on input line 325.
+(pdftex.def)             Requested size: 74.52824pt x 75.28105pt.
+
+<./images/results/4_NR_20.jpg, id=39, 148.30406pt x 149.8097pt>
+File: ./images/results/4_NR_20.jpg Graphic file (type jpg)
+
+<use ./images/results/4_NR_20.jpg>
+Package pdftex.def Info: ./images/results/4_NR_20.jpg used on input line 332.
+(pdftex.def)             Requested size: 74.15184pt x 74.90465pt.
+
+<./images/results/1_LR_90.jpg, id=40, 149.05687pt x 149.05687pt>
+File: ./images/results/1_LR_90.jpg Graphic file (type jpg)
+
+<use ./images/results/1_LR_90.jpg>
+Package pdftex.def Info: ./images/results/1_LR_90.jpg used on input line 350.
+(pdftex.def)             Requested size: 74.52824pt x 74.52824pt.
+
+<./images/results/2_LR_70.jpg, id=41, 149.8097pt x 149.8097pt>
+File: ./images/results/2_LR_70.jpg Graphic file (type jpg)
+
+<use ./images/results/2_LR_70.jpg>
+Package pdftex.def Info: ./images/results/2_LR_70.jpg used on input line 357.
+(pdftex.def)             Requested size: 74.90465pt x 74.90465pt.
+
+<./images/results/3_LR_50.jpg, id=42, 149.05687pt x 151.3153pt>
+File: ./images/results/3_LR_50.jpg Graphic file (type jpg)
+
+<use ./images/results/3_LR_50.jpg>
+Package pdftex.def Info: ./images/results/3_LR_50.jpg used on input line 364.
+(pdftex.def)             Requested size: 74.52824pt x 75.65746pt.
+
+<./images/results/4_LR_20.jpg, id=43, 149.05687pt x 149.8097pt>
+File: ./images/results/4_LR_20.jpg Graphic file (type jpg)
+
+<use ./images/results/4_LR_20.jpg>
+Package pdftex.def Info: ./images/results/4_LR_20.jpg used on input line 371.
+(pdftex.def)             Requested size: 74.52824pt x 74.90465pt.
+ [5 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/1_NR_20
+0.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/2_NR
+_100.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/3
+_NR_50.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results
+/4_NR_20.jpg>]
+<./images/results/cluster_output1.jpg, id=48, 301.8778pt x 301.125pt>
+File: ./images/results/cluster_output1.jpg Graphic file (type jpg)
+
+<use ./images/results/cluster_output1.jpg>
+Package pdftex.def Info: ./images/results/cluster_output1.jpg used on input lin
+e 392.
+(pdftex.def)             Requested size: 181.12807pt x 180.67638pt.
+
+<./images/results/cluster_output2.jpg, id=49, 300.3722pt x 301.8778pt>
+File: ./images/results/cluster_output2.jpg Graphic file (type jpg)
+
+<use ./images/results/cluster_output2.jpg>
+Package pdftex.def Info: ./images/results/cluster_output2.jpg used on input lin
+e 399.
+(pdftex.def)             Requested size: 180.22469pt x 181.12807pt.
+
+<./images/results/cluster_output3.jpg, id=50, 302.63063pt x 302.63063pt>
+File: ./images/results/cluster_output3.jpg Graphic file (type jpg)
+
+<use ./images/results/cluster_output3.jpg>
+Package pdftex.def Info: ./images/results/cluster_output3.jpg used on input lin
+e 406.
+(pdftex.def)             Requested size: 181.57977pt x 181.57977pt.
+
+<./images/results/cluster_output4.jpg, id=51, 303.38344pt x 301.125pt>
+File: ./images/results/cluster_output4.jpg Graphic file (type jpg)
+
+<use ./images/results/cluster_output4.jpg>
+Package pdftex.def Info: ./images/results/cluster_output4.jpg used on input lin
+e 413.
+(pdftex.def)             Requested size: 182.03146pt x 180.67638pt.
+
+("C:\Users\Mike\Desktop\Classes\COSC 4P80\Assignment2\som_report.bbl"
+Underfull \hbox (badness 1675) in paragraph at lines 41--47
+\OT1/ptm/m/n/8 able: http://arizona.openrepository.com/arizona/html/10150/10614
+1/A
+ []
+
+) [6 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/1_LR_9
+0.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/2_LR
+_70.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/3_
+LR_50.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/results/
+4_LR_20.jpg>] [7 <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2/images/re
+sults/cluster_output1.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/Assignment2
+/images/results/cluster_output2.jpg> <C:/Users/Mike/Desktop/Classes/COSC 4P80/A
+ssignment2/images/results/cluster_output3.jpg> <C:/Users/Mike/Desktop/Classes/C
+OSC 4P80/Assignment2/images/results/cluster_output4.jpg>]
+("C:\Users\Mike\Desktop\Classes\COSC 4P80\Assignment2\som_report.aux")
+
+LaTeX Warning: There were multiply-defined labels.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 3490 strings out of 493921
+ 57277 string characters out of 3147285
+ 120565 words of memory out of 3000000
+ 6757 multiletter control sequences out of 15000+200000
+ 39229 words of font info for 72 fonts, out of 3000000 for 9000
+ 841 hyphenation exceptions out of 8191
+ 36i,17n,38p,895b,457s stack positions out of 5000i,500n,10000p,200000b,50000s
+{C:/Program Files/MiKTeX 2.9/fonts/enc/dvips/fontname/8r.enc}<C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmex10.pfb><C:/Program Files/MiKTeX
+ 2.9/fonts/type1/public/amsfonts/cm/cmmi10.pfb><C:/Program Files/MiKTeX 2.9/fon
+ts/type1/public/amsfonts/cm/cmmi5.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/
+public/amsfonts/cm/cmmi7.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/am
+sfonts/cm/cmmi9.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm
+/cmr10.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmr7.pfb
+><C:/Program Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Pro
+gram Files/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy5.pfb><C:/Program File
+s/MiKTeX 2.9/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Program Files/MiKTeX 
+2.9/fonts/type1/urw/times/utmb8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/u
+rw/times/utmbi8a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmr8a.
+pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb>
+Output written on som_report.pdf (7 pages, 883567 bytes).
+PDF statistics:
+ 104 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+

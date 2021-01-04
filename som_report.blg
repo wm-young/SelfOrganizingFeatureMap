@@ -1,0 +1,16 @@
+This is BibTeX, Version 0.99dThe top-level auxiliary file: som_report.aux
+The style file: IEEEtran.bst
+Database file #1: newbib.bib
+-- IEEEtran.bst version 1.13 (2008/09/30) by Michael Shell.
+-- http://www.michaelshell.org/tex/ieeetran/bibtex/
+-- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
+Warning--missing publisher in thesom
+Warning--missing publisher in somvismethods
+Warning--missing publisher in eng_app_of_soms
+Warning--empty year in eng_app_of_soms
+Warning--missing publisher in clustervaliditymeasurement
+Warning--missing publisher in dunnval
+Warning--missing publisher in clusteringsom
+
+Done.
+(There were 7 warnings)
