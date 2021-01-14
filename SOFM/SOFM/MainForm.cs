@@ -1,22 +1,19 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 using System.IO;
+using System.Threading.Tasks;
 
 namespace SOFM
 {  
-    public partial class Form1 : Form
+    public partial class MainForm : Form
     {
         Random rand = new Random();
         SOMVector [] samples;
         Bitmap sampleBmp;
         SOM som;
-        Image[] all_images;
+        Image[] images;
 
 
         float t_inc;
@@ -27,27 +24,28 @@ namespace SOFM
         const int COLOR = 0;
         const int IMAGECLUST = 1;
 
-        int SAMPLE_HEIGHT;
-        int SAMPLE_WIDTH;
+        int SAMPLE_HEIGHT = 0;
+        int SAMPLE_WIDTH = 0;
+        bool SAMPLES_LOADED = false;
 
-        public Form1()
+        public MainForm()
         {
             InitializeComponent();
-            SAMPLE_HEIGHT = pictureBox2.Height;
-            SAMPLE_WIDTH = pictureBox2.Width;
-            //samples = new SOMVector[pictureBox2.Width*pictureBox2.Height];
-            samples = new SOMVector[SAMPLE_WIDTH * SAMPLE_HEIGHT];
-
+            
         }
 
-        /* Generates a random image pixel by pixel between the following colour
-         * Colours(8) = {red, magenta, blue, cyan, green, yellow,black,white}
+        /* Generates a random image pixel by pixel between the following colours
+         * Colours(8) = {red, magenta, blue, cyan, green, yellow, black, white}
          * */
-        private void generateRandomImage()
+        private void GenerateRandomImage()
         {
             int red, blue, green;
             int index = 0;
             sampleBmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            SAMPLE_HEIGHT = pictureBox2.Height;
+            SAMPLE_WIDTH = pictureBox2.Width;
+            samples = new SOMVector[SAMPLE_WIDTH * SAMPLE_HEIGHT];
+
             for (int i = 0; i < sampleBmp.Height; i++)
             {
                 for (int j = 0; j < sampleBmp.Width; j++)
@@ -73,18 +71,18 @@ namespace SOFM
 
         private void button1_Click(object sender, EventArgs e)
         {
-            generateRandomImage();
+            GenerateRandomImage();
             startButton.Enabled = true;
         }
 
 
-        private void startButton_Click(object sender, EventArgs e)
+        private async void startButton_Click(object sender, EventArgs e)
         {
             ALGORITHM = COLOR;
-            runSom();
+            await runSom();
         }
 
-        private void runSom()
+        private Task<int> runSom()
         {
 
             iterations = Int32.Parse(iterationsTextbox.Text);
@@ -110,14 +108,17 @@ namespace SOFM
             progressBar1.Value = 0;
             progressLabel.Text = "Loading...";
             progressLabel.Visible = true;
+            progressLabel.Update();
 
-            run(); //start training the map
+            Run(); //start training the map
 
             progressLabel.Text = "Training complete.";
 
             updateDisplay(som.getWeightBitmap(), pictureBox1);
             //outputBMU(som.getBmuCount());
             testingButton.Enabled = true;
+
+            return Task.FromResult(0);
         }
 
         /*This method is used to display the best matching unit results at the end of training
@@ -171,13 +172,13 @@ namespace SOFM
         }
 
         /* Selected a random sample from the sample data */
-        private SOMVector getRandomSample()
+        private SOMVector GetRandomSample(SOMVector[] data)
         {
 
             int row_index = rand.Next(SAMPLE_HEIGHT);
             int col_index = rand.Next(SAMPLE_WIDTH+1);
 
-            return samples[row_index * col_index];
+            return data[row_index * col_index];
         }
 
         /* This is the main mehtod in the learning process of the self organizing map. It runs the  
@@ -190,10 +191,10 @@ namespace SOFM
          * Do        
          * 
          * */
-        private void run()
+        private void Run()
         {
             int count = 0;
-            updateDisplay(som.getWeightBitmap(),pictureBox1);
+            updateDisplay(som.getWeightBitmap(), pictureBox1);
             SOMVector randSample;
             Position bmu;
             
@@ -206,16 +207,16 @@ namespace SOFM
                     panel1.Controls.Clear();
                     displayImageClusters();
                 }
-                randSample = getRandomSample();
+                randSample = GetRandomSample(samples);
                 bmu = som.getBMU(randSample);
                 som.scaleNeighbours(bmu, randSample, t);
+
                 progressBar1.Increment(1); 
                 progressBar1.Update();
                 pictureBox1.Refresh();
+
                 count++;
             }
-
-
         }//run
 
 
@@ -231,14 +232,14 @@ namespace SOFM
             int xfactor = 0;
             int yfactor = 0;
 
-            for (int i = 0; i < all_images.Count(); i++)
+            for (int i = 0; i < images.Count(); i++)
             {
                 imagePb = new PictureBox();
                 imagePb.Height = 50;
                 imagePb.Width = 50;
                 aSample = samples[i];
                 posBMU = som.getBMU(aSample);
-                imagePb.Image = all_images[i];
+                imagePb.Image = images[i];
                 xfactor = (int)(posBMU.X * widthPercentage);
                 yfactor = (int)(posBMU.Y * heightPercentage);
 
@@ -257,7 +258,7 @@ namespace SOFM
                 bmuBmp.SetPixel(posBMU.X, posBMU.Y, Color.FromArgb(50, 255, 50));
 
             }
-            updateDisplay(bmuBmp, bmuPicturebox);
+            //updateDisplay(bmuBmp, bmuPicturebox);
             this.Refresh();
         }
 
@@ -272,6 +273,7 @@ namespace SOFM
         {
             window.Refresh();
             window.Image = bmp;
+
             if (bmp.Width < window.Width || bmp.Width < window.Height)
             {
                 window.SizeMode = PictureBoxSizeMode.StretchImage;
@@ -287,66 +289,69 @@ namespace SOFM
 
         }
 
-        private void loadImages()
+        private void LoadImages()
         {
-            Bitmap image;
+            Bitmap bitmap;
 
-            string [] images = Directory.GetFiles(@Environment.CurrentDirectory+"\\images\\", "*"+"kong*.jpg");
-            all_images = new Image[images.Count()];
-            SAMPLE_HEIGHT = images.Count();
-            //SAMPLE_HEIGHT = 20;
-            SAMPLE_WIDTH = 1;
-            samples = new SOMVector[SAMPLE_HEIGHT * SAMPLE_WIDTH];
+            string [] image_path = Directory.GetFiles(@Environment.CurrentDirectory + "\\images\\", "*"+"kong*.jpg");
+            images = new Image[image_path.Count()];
+            displayBox.AppendText("Loading "+ image_path.Count() + " images from: " + @Environment.CurrentDirectory + "\\images\\" + Environment.NewLine);
+            for (int i = 0; i < image_path.Count(); i++)
+            {
+                displayBox.AppendText(image_path[i].Substring(image_path[i].LastIndexOf('\\')) + Environment.NewLine);
+                Image image = Image.FromFile(image_path[i]);
+                bitmap = new Bitmap(image);
+                images[i] = bitmap;
+            }
+            displayBox.AppendText("Done." + Environment.NewLine);
 
-            Image picture = Image.FromFile(images[0]);
-            imageCollectionInputPicturebox1.Image = picture;
+            //Set the display images for visual aid to know which images are being selected for sample creation
+            imageCollectionInputPicturebox1.Image = images[0];
             imageCollectionInputPicturebox1.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox1.Refresh();
 
-            picture = Image.FromFile(images[3]);
-            imageCollectionInputPicturebox2.Image = picture;
+            imageCollectionInputPicturebox2.Image = images[3];
             imageCollectionInputPicturebox2.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox2.Refresh();
 
-            picture = Image.FromFile(images[6]);
-            imageCollectionInputPicturebox3.Image = picture;
+            imageCollectionInputPicturebox3.Image = images[6];
             imageCollectionInputPicturebox3.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox3.Refresh();
 
-            picture = Image.FromFile(images[9]);
-            imageCollectionInputPicturebox4.Image = picture;
+            imageCollectionInputPicturebox4.Image = images[9];
             imageCollectionInputPicturebox4.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox4.Refresh();
 
-            picture = Image.FromFile(images[12]);
-            imageCollectionInputPicturebox5.Image = picture;
+            imageCollectionInputPicturebox5.Image = images[12];
             imageCollectionInputPicturebox5.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox5.Refresh();
 
-            picture = Image.FromFile(images[15]);
-            imageCollectionInputPicturebox6.Image = picture;
+            imageCollectionInputPicturebox6.Image = images[15];
             imageCollectionInputPicturebox6.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox6.Refresh();
 
-            picture = Image.FromFile(images[17]);
-            imageCollectionInputPicturebox7.Image = picture;
+            imageCollectionInputPicturebox7.Image = images[17];
             imageCollectionInputPicturebox7.SizeMode = PictureBoxSizeMode.StretchImage;
             imageCollectionInputPicturebox7.Refresh();
 
-            double[] v2;
-            for (int i = 0; i < images.Count(); i++)
-            {
+            InitializeSamples(1, images.Length); //-1 for the trailing newline char
+            //After images, load the sample vectors from a file
+            samples = LoadSamplesFromFile(@Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec");
 
-                displayBox.AppendText("Now loading: " + images[i] + Environment.NewLine);
-                picture = Image.FromFile(images[i]);
-                image = new Bitmap(picture);
-                all_images[i] = image;
-                displayBox.AppendText("Constructing sample vector..." + Environment.NewLine);
-                v2 = partitionImage(image);
+            //If samples have not been loaded, create samples from images and save to file
+            if(!SAMPLES_LOADED)
+            {
+                double[] v2;
+
+                displayBox.AppendText("Constructing sample vectors from images, this may take awhile..." + Environment.NewLine);
+                for (int i = 0; i < images.Length; i++)
+                {
+                    v2 = partitionImage(new Bitmap(images[i]));
+                    samples[i] = new SOMVector(v2.Count());
+                    samples[i].Vector = v2;
+                }
                 displayBox.AppendText("Done." + Environment.NewLine);
-                samples[i] = new SOMVector(v2.Count());
-                samples[i].Vector = v2;
-                
+                SaveSamplesToFile(samples, @Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec");
             }
 
             startButton2.Enabled = true;
@@ -364,7 +369,7 @@ namespace SOFM
          * */
         private double [] partitionImage(Bitmap image)
         {
-            Bitmap testImage = new Bitmap( image.Width,image.Height);
+            //Bitmap testImage = new Bitmap( image.Width,image.Height);
             int count = 0; //used to count the number of pixels in a given partition
             int pixelCount= 0; //number of pixels in the entire image
 
@@ -405,19 +410,20 @@ namespace SOFM
                             totalRed += color.R;
                             totalBlue += color.G;
                             totalGreen += color.B;
-                            totalRGB = checked((totalRed + totalBlue + totalGreen) / 3); 
 
                             partitionRed += color.R;
                             partitionGreen += color.G;
                             partitionBlue += color.B;
-                            partitionRGB = (partitionRed + partitionGreen + partitionBlue)/3;
 
-                            testImage.SetPixel(j,i, Color.FromArgb(image.GetPixel(j, i).R,image.GetPixel(j, i).G,image.GetPixel(j, i).B));
+                            //testImage.SetPixel(j,i, Color.FromArgb(color.R, color.G, color.B));
 
                             count++;
                             pixelCount++;
                         }
                     }
+
+                    totalRGB = checked((totalRed + totalBlue + totalGreen) / 3);
+                    partitionRGB = (partitionRed + partitionGreen + partitionBlue) / 3;
 
                     //Constuct sample vector
                     avgPartitionRGB = partitionRGB / count;
@@ -447,10 +453,10 @@ namespace SOFM
             int avgTotalBlue = totalBlue / pixelCount;
             long avgTotalRGB = totalRGB/pixelCount;
 
-            double stdevTotalRed = 0.0;
+            double stDevTotalRed = 0.0;
             double stDevTotalGreen = 0.0;
             double stDevTotalBlue = 0.0;
-            double totalStdevRGB = 0.0;
+            double stDevTotalRGB = 0.0;
 
             //Calculate standard deviations
             for (int i = 0; i < image.Height; i++)
@@ -458,25 +464,25 @@ namespace SOFM
                 for (int j = 0; j < image.Width; j++)
                 {
                     Color color = image.GetPixel(j, i);
-                    stdevTotalRed += Math.Pow((image.GetPixel(j, i).R - avgTotalRed), 2);
+                    stDevTotalRed += Math.Pow((image.GetPixel(j, i).R - avgTotalRed), 2);
                     stDevTotalGreen += Math.Pow((image.GetPixel(j, i).G - avgTotalGreen), 2);
                     stDevTotalBlue += Math.Pow((image.GetPixel(j, i).B - avgTotalRGB), 2);
-                    totalStdevRGB = stdevTotalRed + stDevTotalGreen + stDevTotalBlue / 3;
+                    stDevTotalRGB = stDevTotalRed + stDevTotalGreen + stDevTotalBlue / 3;
                     count++;
                 }
             }
 
-            stdevTotalRed = Math.Sqrt(stdevTotalRed / count);
+            stDevTotalRed = Math.Sqrt(stDevTotalRed / count);
             stDevTotalGreen = Math.Sqrt(stDevTotalGreen / count);
             stDevTotalBlue = Math.Sqrt(stDevTotalBlue / count);
-            totalStdevRGB = Math.Sqrt(totalStdevRGB / count);
+            stDevTotalRGB = Math.Sqrt(stDevTotalRGB / count);
             vector[0] = (double)avgTotalRGB;
-            vector[1] = (double)totalStdevRGB;
+            vector[1] = (double)stDevTotalRGB;
             vector[2] = (double)avgTotalRed;
-            vector[3] = (double)stdevTotalRed;
+            vector[3] = (double)stDevTotalRed;
             vector[4] = (double)avgTotalGreen;
             vector[5] = (double)stDevTotalGreen;
-            vector[6] = (double)avgTotalGreen;
+            vector[6] = (double)avgTotalBlue;
             vector[7] = (double)stDevTotalBlue;
             return vector;
         }//partitionImage
@@ -509,7 +515,8 @@ namespace SOFM
         private void loadImageCollectionButton_Click(object sender, EventArgs e)
         {
             genRandImgButton.Enabled = false;
-            loadImages();
+            LoadImages();
+
         }
 
         public double getDecayConstant()
@@ -534,13 +541,94 @@ namespace SOFM
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            MessageBox.Show("To start color organization, click 'Generate random image' then click 'Start'" + Environment.NewLine + "To start Image Clustering, click 'Load Collection of Images', then click 'Start'"
-                               + Environment.NewLine + "After Image Clustering, you can test the network for accuracy by feeding the testing samples through by clicking on 'Start Testing'");
+            MessageBox.Show("" +
+                "1) To start color organization, click 'Generate random image' then click 'Start'" + Environment.NewLine + Environment.NewLine +
+                "2) To start Image Clustering, click 'Load Collection of Images', then click 'Start'" + Environment.NewLine + Environment.NewLine +
+                "3) After Image Clustering, you can test the network for accuracy by feeding the testing samples through by clicking on 'Start Testing'" +
+                "");
         }
 
         private void testingButton_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void groupBox6_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        // Loads sample vectors from the given file path. Parses each line of strings
+        // and converts the values into double values when instantiating the SOMVector
+        // Returns the SOMVector [] when read from the file successfully, null otherwise
+        private SOMVector[] LoadSamplesFromFile(string filePath)
+        {
+            SOMVector[] samples;
+            try
+            {
+                StreamReader reader = new StreamReader(filePath, System.Text.Encoding.Default);
+                string[] values = reader.ReadToEnd().Split('\n');
+                reader.Close();
+                samples = new SOMVector[values.Length - 1]; //-1 for the trailing newline char
+                //InitializeSamples(1, values.Length - 1); //-1 for the trailing newline char
+
+                for (int i = 0; i < values.Length - 1; i++)
+                {
+                    System.Console.WriteLine(values[i]);
+                    string[] line = values[i].Split(',');
+                    double[] vector = new double[line.Length];
+                    for (int j = 0; j < line.Length; j++)
+                    {
+                        vector[j] = Double.Parse(line[j]);
+                    }
+                    samples[i] = new SOMVector(vector);
+                }
+
+                SAMPLES_LOADED = true;
+
+                return samples;
+            }
+            catch (FileNotFoundException e)
+            {
+                displayBox.AppendText("File not found: " + filePath + Environment.NewLine);
+            }
+            catch (IOException e)
+            {
+                MessageBox.Show("Unexpected error occured while attempting to read file:" +
+                    Environment.NewLine +
+                    filePath + Environment.NewLine +
+                    e.StackTrace);
+            }
+            
+            return null;
+        }
+
+        private bool SaveSamplesToFile(SOMVector[] vectors, string filePath)
+        {
+            string [] stringVectors = new string[vectors.Length];
+
+            for(int i = 0; i < vectors.Length; i++)
+            { 
+                stringVectors[i] = vectors[i].ToString();
+            }
+            displayBox.AppendText("Saving samples to file..." + Environment.NewLine);
+            System.IO.File.WriteAllLines(filePath, stringVectors);
+            displayBox.AppendText("Saved.");
+            return true;
+        }
+
+        private void InitializeSamples(int width, int height)
+        {
+            SAMPLE_HEIGHT = height;
+            SAMPLE_WIDTH = width;
+            samples = new SOMVector[SAMPLE_WIDTH * SAMPLE_HEIGHT];
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            LoadSamplesFromFile(@Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec");
+            displayBox.AppendText("Samples successfully loaded from:" + @Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec" + Environment.NewLine);
+            //Console.WriteLine(samples);
         }
 
         private void startButton2_Click(object sender, EventArgs e)

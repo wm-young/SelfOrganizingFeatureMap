@@ -1,6 +1,6 @@
 ﻿namespace SOFM
 {
-    partial class Form1
+    partial class MainForm
     {
         /// <summary>
         /// Required designer variable.
@@ -64,11 +64,12 @@
             this.imageCollectionInputPicturebox5 = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.imageCollectionInputPicturebox7 = new System.Windows.Forms.PictureBox();
+            this.imageCollectionInputPicturebox6 = new System.Windows.Forms.PictureBox();
             this.label11 = new System.Windows.Forms.Label();
             this.displayBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.imageCollectionInputPicturebox6 = new System.Windows.Forms.PictureBox();
-            this.imageCollectionInputPicturebox7 = new System.Windows.Forms.PictureBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
@@ -83,8 +84,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox5)).BeginInit();
             this.groupBox6.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox6)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox7)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox6)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox1
@@ -300,7 +301,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(316, 118);
+            this.closeButton.Location = new System.Drawing.Point(282, 56);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 6;
@@ -321,7 +322,7 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(671, 263);
+            this.progressBar1.Location = new System.Drawing.Point(932, 249);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(200, 23);
             this.progressBar1.Step = 1;
@@ -330,7 +331,7 @@
             // progressLabel
             // 
             this.progressLabel.AutoSize = true;
-            this.progressLabel.Location = new System.Drawing.Point(674, 289);
+            this.progressLabel.Location = new System.Drawing.Point(929, 275);
             this.progressLabel.Name = "progressLabel";
             this.progressLabel.Size = new System.Drawing.Size(0, 13);
             this.progressLabel.TabIndex = 9;
@@ -446,11 +447,12 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(316, 45);
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.Location = new System.Drawing.Point(282, 25);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
-            this.button1.Text = "help!";
+            this.button1.Text = "Help";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -470,6 +472,27 @@
             this.groupBox6.TabIndex = 28;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "Sample Images";
+            this.groupBox6.Enter += new System.EventHandler(this.groupBox6_Enter);
+            // 
+            // imageCollectionInputPicturebox7
+            // 
+            this.imageCollectionInputPicturebox7.BackColor = System.Drawing.Color.White;
+            this.imageCollectionInputPicturebox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imageCollectionInputPicturebox7.Location = new System.Drawing.Point(29, 277);
+            this.imageCollectionInputPicturebox7.Name = "imageCollectionInputPicturebox7";
+            this.imageCollectionInputPicturebox7.Size = new System.Drawing.Size(100, 100);
+            this.imageCollectionInputPicturebox7.TabIndex = 20;
+            this.imageCollectionInputPicturebox7.TabStop = false;
+            // 
+            // imageCollectionInputPicturebox6
+            // 
+            this.imageCollectionInputPicturebox6.BackColor = System.Drawing.Color.White;
+            this.imageCollectionInputPicturebox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.imageCollectionInputPicturebox6.Location = new System.Drawing.Point(266, 171);
+            this.imageCollectionInputPicturebox6.Name = "imageCollectionInputPicturebox6";
+            this.imageCollectionInputPicturebox6.Size = new System.Drawing.Size(100, 100);
+            this.imageCollectionInputPicturebox6.TabIndex = 19;
+            this.imageCollectionInputPicturebox6.TabStop = false;
             // 
             // label11
             // 
@@ -479,7 +502,7 @@
             this.label11.Size = new System.Drawing.Size(248, 26);
             this.label11.TabIndex = 18;
             this.label11.Text = "There are 3 seperate pictures for each character. \r\nOnly 5 are displayed to show " +
-                "differences in pictures";
+    "differences in pictures";
             // 
             // displayBox
             // 
@@ -498,31 +521,22 @@
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 31;
             // 
-            // imageCollectionInputPicturebox6
+            // button2
             // 
-            this.imageCollectionInputPicturebox6.BackColor = System.Drawing.Color.White;
-            this.imageCollectionInputPicturebox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imageCollectionInputPicturebox6.Location = new System.Drawing.Point(266, 171);
-            this.imageCollectionInputPicturebox6.Name = "imageCollectionInputPicturebox6";
-            this.imageCollectionInputPicturebox6.Size = new System.Drawing.Size(100, 100);
-            this.imageCollectionInputPicturebox6.TabIndex = 19;
-            this.imageCollectionInputPicturebox6.TabStop = false;
+            this.button2.Location = new System.Drawing.Point(293, 118);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(98, 23);
+            this.button2.TabIndex = 32;
+            this.button2.Text = "Load Samples";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
-            // imageCollectionInputPicturebox7
-            // 
-            this.imageCollectionInputPicturebox7.BackColor = System.Drawing.Color.White;
-            this.imageCollectionInputPicturebox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.imageCollectionInputPicturebox7.Location = new System.Drawing.Point(29, 277);
-            this.imageCollectionInputPicturebox7.Name = "imageCollectionInputPicturebox7";
-            this.imageCollectionInputPicturebox7.Size = new System.Drawing.Size(100, 100);
-            this.imageCollectionInputPicturebox7.TabIndex = 20;
-            this.imageCollectionInputPicturebox7.TabStop = false;
-            // 
-            // Form1
+            // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 707);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.displayBox);
             this.Controls.Add(this.button1);
@@ -535,7 +549,7 @@
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox6);
-            this.Name = "Form1";
+            this.Name = "MainForm";
             this.Text = "Cosc 4P80 Assignment 2 - Self Organizing Feature Maps";
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -553,8 +567,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox5)).EndInit();
             this.groupBox6.ResumeLayout(false);
             this.groupBox6.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox6)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox7)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox6)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -603,6 +617,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox7;
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox6;
+        private System.Windows.Forms.Button button2;
     }
 }
 

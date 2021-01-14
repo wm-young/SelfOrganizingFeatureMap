@@ -13,12 +13,12 @@ namespace SOFM
     {
         private double[] vector;
 
-        public SOMVector(double theX, double theY, double theZ)
+        public SOMVector(double x, double y, double z)
         {
             vector = new double[3];
-            vector[0] = theX;
-            vector[1] = theY;
-            vector[2] = theZ;
+            vector[0] = x;
+            vector[1] = y;
+            vector[2] = z;
         }
 
         public SOMVector()
@@ -29,6 +29,11 @@ namespace SOFM
         public SOMVector(int size)
         {
             vector = new double[size];
+        }
+
+        public SOMVector(double[] _vector)
+        {
+            vector = _vector;
         }
 
         /* Quick access getter and setter methods
@@ -77,7 +82,32 @@ namespace SOFM
        
         public override string ToString()
         {
-            string text="[";
+            string stringVector= "";
+
+            for (int i = 0; i < vector.Length; i++)
+            {
+                stringVector += vector[i].ToString();
+                if (i != (vector.Length - 1))
+                    stringVector += ",";
+            }
+            return stringVector;
+        }
+
+        public string[] ToStringArray()
+        {
+            string [] stringVector = new string [vector.Length];
+
+            for (int i = 0; i < vector.Length; i++)
+            {
+                stringVector[i] = vector[i].ToString();
+            }
+
+            return stringVector;
+        }
+
+        public string PrettyText()
+        {
+            string text = "[";
             for (int i = 0; i < vector.Length; i++)
             {
                 text += vector[i] + ",";

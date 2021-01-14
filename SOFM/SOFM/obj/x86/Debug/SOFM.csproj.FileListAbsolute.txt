@@ -16,3 +16,13 @@ D:\Classes\COSC 4P80\Assignment2\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.GenerateRes
 D:\Classes\COSC 4P80\Assignment2\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.CoreCompileInputs.cache
 D:\Classes\COSC 4P80\Assignment2\SOFM\SOFM\obj\x86\Debug\SOFM.exe
 D:\Classes\COSC 4P80\Assignment2\SOFM\SOFM\obj\x86\Debug\SOFM.pdb
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\bin\Debug\SOFM.exe.config
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\bin\Debug\SOFM.exe
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\bin\Debug\SOFM.pdb
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.csprojAssemblyReference.cache
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.MainForm.resources
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.Properties.Resources.resources
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.GenerateResource.cache
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.CoreCompileInputs.cache
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.exe
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.pdb

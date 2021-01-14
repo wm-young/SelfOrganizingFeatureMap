@@ -11,7 +11,7 @@ namespace SOFM
         private Neuron [,] neurons; //lattice of neurons
         private int [,] bmuCount; //2d arrray representing the number of times each neuron was selected as the best matching unit
         Bitmap weightBmp;//weight bmp for weight values to use for image
-        Form1 form; 
+        MainForm form; 
         Random rand;
         double radius;
         double learningRate;
@@ -22,7 +22,7 @@ namespace SOFM
         int rows; 
         int cols;
 
-        public SOM(Form1 gui)
+        public SOM(MainForm gui)
         {
             form = gui;
             rand = new Random();
