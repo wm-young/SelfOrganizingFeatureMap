@@ -33,20 +33,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.bmuPicturebox = new System.Windows.Forms.PictureBox();
-            this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.decayConstantTextbox = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.neighRadTextbox = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.iterationsTextbox = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.learningRateTextbox = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.colTextbox = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.rowTextbox = new System.Windows.Forms.TextBox();
             this.genRandImgButton = new System.Windows.Forms.Button();
             this.closeButton = new System.Windows.Forms.Button();
             this.startButton = new System.Windows.Forms.Button();
@@ -69,13 +55,13 @@
             this.label11 = new System.Windows.Forms.Label();
             this.displayBox = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.resetButton = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bmuPicturebox)).BeginInit();
-            this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox1)).BeginInit();
@@ -141,153 +127,6 @@
             this.bmuPicturebox.TabIndex = 1;
             this.bmuPicturebox.TabStop = false;
             // 
-            // groupBox3
-            // 
-            this.groupBox3.Controls.Add(this.decayConstantTextbox);
-            this.groupBox3.Controls.Add(this.label7);
-            this.groupBox3.Controls.Add(this.neighRadTextbox);
-            this.groupBox3.Controls.Add(this.label6);
-            this.groupBox3.Controls.Add(this.iterationsTextbox);
-            this.groupBox3.Controls.Add(this.label5);
-            this.groupBox3.Controls.Add(this.learningRateTextbox);
-            this.groupBox3.Controls.Add(this.label4);
-            this.groupBox3.Controls.Add(this.colTextbox);
-            this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label2);
-            this.groupBox3.Controls.Add(this.label1);
-            this.groupBox3.Controls.Add(this.rowTextbox);
-            this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(13, 13);
-            this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(263, 244);
-            this.groupBox3.TabIndex = 4;
-            this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Parameters";
-            // 
-            // decayConstantTextbox
-            // 
-            this.decayConstantTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.decayConstantTextbox.Location = new System.Drawing.Point(102, 171);
-            this.decayConstantTextbox.Name = "decayConstantTextbox";
-            this.decayConstantTextbox.Size = new System.Drawing.Size(100, 20);
-            this.decayConstantTextbox.TabIndex = 12;
-            this.decayConstantTextbox.Text = "15.0";
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(10, 174);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(86, 13);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Decay Constant:";
-            // 
-            // neighRadTextbox
-            // 
-            this.neighRadTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.neighRadTextbox.Location = new System.Drawing.Point(135, 135);
-            this.neighRadTextbox.Name = "neighRadTextbox";
-            this.neighRadTextbox.Size = new System.Drawing.Size(100, 20);
-            this.neighRadTextbox.TabIndex = 10;
-            this.neighRadTextbox.Text = "100.0";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(10, 138);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(119, 13);
-            this.label6.TabIndex = 9;
-            this.label6.Text = "Neighbourhood Radius:";
-            // 
-            // iterationsTextbox
-            // 
-            this.iterationsTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.iterationsTextbox.Location = new System.Drawing.Point(69, 208);
-            this.iterationsTextbox.Name = "iterationsTextbox";
-            this.iterationsTextbox.Size = new System.Drawing.Size(100, 20);
-            this.iterationsTextbox.TabIndex = 8;
-            this.iterationsTextbox.Text = "150";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 211);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(53, 13);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Iterations:";
-            // 
-            // learningRateTextbox
-            // 
-            this.learningRateTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.learningRateTextbox.Location = new System.Drawing.Point(93, 97);
-            this.learningRateTextbox.Name = "learningRateTextbox";
-            this.learningRateTextbox.Size = new System.Drawing.Size(69, 20);
-            this.learningRateTextbox.TabIndex = 6;
-            this.learningRateTextbox.Text = "0.7";
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(10, 105);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(77, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Learning Rate:";
-            // 
-            // colTextbox
-            // 
-            this.colTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.colTextbox.Location = new System.Drawing.Point(183, 40);
-            this.colTextbox.Name = "colTextbox";
-            this.colTextbox.Size = new System.Drawing.Size(37, 20);
-            this.colTextbox.TabIndex = 4;
-            this.colTextbox.Text = "100";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(109, 43);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(68, 13);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Column Size:";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(6, 43);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(55, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Row Size:";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(6, 22);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(88, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Map Dimensions:";
-            // 
-            // rowTextbox
-            // 
-            this.rowTextbox.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rowTextbox.Location = new System.Drawing.Point(67, 40);
-            this.rowTextbox.Name = "rowTextbox";
-            this.rowTextbox.Size = new System.Drawing.Size(36, 20);
-            this.rowTextbox.TabIndex = 0;
-            this.rowTextbox.Text = "100";
-            // 
             // genRandImgButton
             // 
             this.genRandImgButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -301,7 +140,7 @@
             // 
             // closeButton
             // 
-            this.closeButton.Location = new System.Drawing.Point(282, 56);
+            this.closeButton.Location = new System.Drawing.Point(293, 195);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(75, 23);
             this.closeButton.TabIndex = 6;
@@ -448,7 +287,7 @@
             // button1
             // 
             this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.Location = new System.Drawing.Point(282, 25);
+            this.button1.Location = new System.Drawing.Point(293, 166);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(75, 23);
             this.button1.TabIndex = 24;
@@ -521,13 +360,23 @@
             this.panel1.Size = new System.Drawing.Size(400, 400);
             this.panel1.TabIndex = 31;
             // 
+            // resetButton
+            // 
+            this.resetButton.Location = new System.Drawing.Point(293, 224);
+            this.resetButton.Name = "resetButton";
+            this.resetButton.Size = new System.Drawing.Size(75, 23);
+            this.resetButton.TabIndex = 33;
+            this.resetButton.Text = "Clear";
+            this.resetButton.UseVisualStyleBackColor = true;
+            this.resetButton.Click += new System.EventHandler(this.resetButton_Click);
+            // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(293, 118);
+            this.button2.Location = new System.Drawing.Point(294, 125);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(98, 23);
-            this.button2.TabIndex = 32;
-            this.button2.Text = "Load Samples";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 34;
+            this.button2.Text = "Settings";
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
@@ -537,13 +386,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1244, 707);
             this.Controls.Add(this.button2);
+            this.Controls.Add(this.resetButton);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.displayBox);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.progressLabel);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.closeButton);
-            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox4);
@@ -556,8 +405,6 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bmuPicturebox)).EndInit();
-            this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox5.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.imageCollectionInputPicturebox1)).EndInit();
@@ -580,19 +427,9 @@
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox learningRateTextbox;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox colTextbox;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox rowTextbox;
         private System.Windows.Forms.Button genRandImgButton;
         private System.Windows.Forms.Button closeButton;
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.TextBox iterationsTextbox;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.Label progressLabel;
         private System.Windows.Forms.Button loadImageCollectionButton;
@@ -604,10 +441,6 @@
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox4;
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox5;
         private System.Windows.Forms.PictureBox bmuPicturebox;
-        private System.Windows.Forms.TextBox neighRadTextbox;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox decayConstantTextbox;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Button testingButton;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.GroupBox groupBox6;
@@ -617,6 +450,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox7;
         private System.Windows.Forms.PictureBox imageCollectionInputPicturebox6;
+        private System.Windows.Forms.Button resetButton;
         private System.Windows.Forms.Button button2;
     }
 }

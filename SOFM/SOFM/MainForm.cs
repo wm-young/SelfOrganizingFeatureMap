@@ -14,6 +14,7 @@ namespace SOFM
         Bitmap sampleBmp;
         SOM som;
         Image[] images;
+        ParametersForm parametersPopup = new ParametersForm();
 
 
         float t_inc;
@@ -79,19 +80,20 @@ namespace SOFM
         private async void startButton_Click(object sender, EventArgs e)
         {
             ALGORITHM = COLOR;
-            await runSom();
+            //await Task.Run(() => RunSom());
+            RunSom();
         }
 
-        private Task<int> runSom()
+        private double RunSom()
         {
 
-            iterations = Int32.Parse(iterationsTextbox.Text);
-            t_inc = (float)1.0f / iterations;
+            iterations = parametersPopup.Iterations;
+            t_inc = (float)1.0f / iterations; //? Figure out why we normalize
 
-            rows = Int32.Parse(rowTextbox.Text);
-            cols = Int32.Parse(colTextbox.Text);
+            rows = parametersPopup.Rows;
+            cols = parametersPopup.Columns;
 
-            som = new SOM(this);
+            som = new SOM(rows, cols, parametersPopup.NeighbourhoodRadius, parametersPopup.LearningRate, parametersPopup.DecayConstant, SAMPLE_HEIGHT);
             switch (ALGORITHM)
             {
                 case COLOR:
@@ -106,19 +108,22 @@ namespace SOFM
 
             progressBar1.Show();
             progressBar1.Value = 0;
-            progressLabel.Text = "Loading...";
             progressLabel.Visible = true;
+            progressLabel.Text = "Loading...";
             progressLabel.Update();
 
             Run(); //start training the map
 
             progressLabel.Text = "Training complete.";
 
-            updateDisplay(som.getWeightBitmap(), pictureBox1);
+            UpdateDisplay(som.getWeightBitmap(), pictureBox1);
             //outputBMU(som.getBmuCount());
             testingButton.Enabled = true;
 
-            return Task.FromResult(0);
+            return 0;
+
+            //System.Threading.Thread.Sleep(TimeSpan.FromSeconds(5));
+            //return 2 / 1;
         }
 
         /*This method is used to display the best matching unit results at the end of training
@@ -149,7 +154,7 @@ namespace SOFM
                 }
             }
 
-            updateDisplay(bmuBmp, bmuPicturebox);
+            UpdateDisplay(bmuBmp, bmuPicturebox);
         }
 
         private Position findMax(int[,] set)
@@ -194,7 +199,7 @@ namespace SOFM
         private void Run()
         {
             int count = 0;
-            updateDisplay(som.getWeightBitmap(), pictureBox1);
+            UpdateDisplay(som.getWeightBitmap(), pictureBox1);
             SOMVector randSample;
             Position bmu;
             
@@ -269,7 +274,7 @@ namespace SOFM
         }
 
         //updates the outputdisplay with the given bitmap file and given picturebox
-        public void updateDisplay(Bitmap bmp, PictureBox window)
+        public void UpdateDisplay(Bitmap bmp, PictureBox window)
         {
             window.Refresh();
             window.Image = bmp;
@@ -295,6 +300,7 @@ namespace SOFM
 
             string [] image_path = Directory.GetFiles(@Environment.CurrentDirectory + "\\images\\", "*"+"kong*.jpg");
             images = new Image[image_path.Count()];
+
             displayBox.AppendText("Loading "+ image_path.Count() + " images from: " + @Environment.CurrentDirectory + "\\images\\" + Environment.NewLine);
             for (int i = 0; i < image_path.Count(); i++)
             {
@@ -346,7 +352,7 @@ namespace SOFM
                 displayBox.AppendText("Constructing sample vectors from images, this may take awhile..." + Environment.NewLine);
                 for (int i = 0; i < images.Length; i++)
                 {
-                    v2 = partitionImage(new Bitmap(images[i]));
+                    v2 = PartitionImage(new Bitmap(images[i]));
                     samples[i] = new SOMVector(v2.Count());
                     samples[i].Vector = v2;
                 }
@@ -365,9 +371,11 @@ namespace SOFM
          *  Once that is done the corresponding vector for each image is added to the samples collection
          *  The vector sample vector is also constructed and added to the list of samples to be used for testing.
          *  The vector is of the following form:
-         *  v1 =[mu(RGB),sig(
+         *  v1 =[mu(RGB), sig(RGB), mu(R), sig(R), mu(G), sig(G), mu(B), sig(B)]
+         *  
+         *  where mu = average, sig = standard deviation
          * */
-        private double [] partitionImage(Bitmap image)
+        private double [] PartitionImage(Bitmap image)
         {
             //Bitmap testImage = new Bitmap( image.Width,image.Height);
             int count = 0; //used to count the number of pixels in a given partition
@@ -492,51 +500,10 @@ namespace SOFM
             this.Close();
         }
 
-        public int getRows()
-        {
-            return rows;
-        }
-
-        public int getCols()
-        {
-            return cols;
-        }
-
-        public PictureBox getPictureBox()
-        {
-            return pictureBox1;
-        }
-
-        public double getLearningRate()
-        {
-            return Double.Parse(learningRateTextbox.Text);
-        }
-
         private void loadImageCollectionButton_Click(object sender, EventArgs e)
         {
             genRandImgButton.Enabled = false;
             LoadImages();
-
-        }
-
-        public double getDecayConstant()
-        {
-            return Double.Parse(decayConstantTextbox.Text);
-        }
-
-        public double getNeighbourhoodRadius()
-        {
-            return Double.Parse(neighRadTextbox.Text);
-        }
-
-        public int getSampleVectorSize()
-        {
-            return samples[0].getSize();
-        }
-
-        public int getSampleSize()
-        {
-            return samples.Count();
         }
 
         private void button1_Click_1(object sender, EventArgs e)
@@ -624,17 +591,70 @@ namespace SOFM
             samples = new SOMVector[SAMPLE_WIDTH * SAMPLE_HEIGHT];
         }
 
+        //Clears all values to default, clearing picture boxes and renabling buttons so they
+        // match initial configuration.
+        private void ResetValues()
+        {
+            //Clear picture boxes by creating a new white bitmap and updating the picture box
+            Bitmap clearBmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+
+            for (int i = 0; i < clearBmp.Height; i++)
+            {
+                for (int j = 0; j < clearBmp.Width; j++)
+                {
+                    clearBmp.SetPixel(i, j, Color.White);
+                }
+            }
+            UpdateDisplay(clearBmp, pictureBox1);
+            UpdateDisplay(clearBmp, pictureBox2);
+            UpdateDisplay(clearBmp, bmuPicturebox);
+
+            clearBmp = new Bitmap(pictureBox2.Width, pictureBox2.Height);
+            for (int i = 0; i < clearBmp.Height; i++)
+            {
+                for (int j = 0; j < clearBmp.Width; j++)
+                {
+                    clearBmp.SetPixel(i, j, Color.White);
+                }
+            }
+
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox1);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox2);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox3);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox4);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox5);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox6);
+            UpdateDisplay(clearBmp, imageCollectionInputPicturebox7);
+
+            displayBox.Clear();
+
+            //Enable/Disable UI Components
+            button1.Enabled = true;
+            genRandImgButton.Enabled = true;
+            startButton.Enabled = false;
+            startButton2.Enabled = false;
+            testingButton.Enabled = false;
+        }
+
+        //Handles the on click event of the reset button.
+        //Triggering a call to clear all the images, and enable/disable buttons
+        private void resetButton_Click(object sender, EventArgs e)
+        {
+            ResetValues();
+        }
+
         private void button2_Click(object sender, EventArgs e)
         {
-            LoadSamplesFromFile(@Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec");
-            displayBox.AppendText("Samples successfully loaded from:" + @Environment.CurrentDirectory + "\\saves\\vectors\\kongs.vec" + Environment.NewLine);
-            //Console.WriteLine(samples);
+            if (parametersPopup.ShowDialog(this) == DialogResult.OK) 
+            {
+                Console.WriteLine(parametersPopup.DecayConstant);
+            }
         }
 
         private void startButton2_Click(object sender, EventArgs e)
         {
             ALGORITHM = IMAGECLUST;
-            runSom();
+            RunSom();
         }
 
     }

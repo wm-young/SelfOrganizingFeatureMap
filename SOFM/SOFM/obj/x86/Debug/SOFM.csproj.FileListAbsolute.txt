@@ -26,3 +26,4 @@ C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.GenerateRes
 C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.csproj.CoreCompileInputs.cache
 C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.exe
 C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.pdb
+C:\work\SelfOrganizingFeatureMap\SOFM\SOFM\obj\x86\Debug\SOFM.ParametersForm.resources

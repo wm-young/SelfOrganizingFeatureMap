@@ -11,26 +11,25 @@ namespace SOFM
         private Neuron [,] neurons; //lattice of neurons
         private int [,] bmuCount; //2d arrray representing the number of times each neuron was selected as the best matching unit
         Bitmap weightBmp;//weight bmp for weight values to use for image
-        MainForm form; 
         Random rand;
         double radius;
         double learningRate;
         double decayConstant;
-
+        int vectorSize;
 
         //Dimension of lattice
         int rows; 
         int cols;
 
-        public SOM(MainForm gui)
+        public SOM(int _rows, int _columns, double _radius, double _learningRate, double _decayConstant, int _vectorSize)
         {
-            form = gui;
             rand = new Random();
-            rows = form.getRows();
-            cols = form.getCols();
-            radius = form.getNeighbourhoodRadius();
-            learningRate = form.getLearningRate();
-            decayConstant = form.getDecayConstant();
+            rows = _rows;
+            cols = _columns;
+            radius = _radius;
+            learningRate = _learningRate;
+            decayConstant = _decayConstant;
+            vectorSize = _vectorSize;
         }
 
         public void init()
@@ -53,7 +52,7 @@ namespace SOFM
             {
                 for (int j = 0; j < cols; j++)
                 {
-                    neurons[i, j] = new Neuron(i, j,form.getSampleVectorSize());
+                    neurons[i, j] = new Neuron(i, j, vectorSize);
                     for (int k = 0; k < neurons[i, j].WeightVector.getSize(); k++)
                     {
                         neurons[i, j].WeightVector.setValueAtIndex(k, rand.Next(0, 255));
